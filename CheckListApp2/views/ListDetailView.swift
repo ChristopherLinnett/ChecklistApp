@@ -60,6 +60,7 @@ struct ListDetailView: View {
     }
     func moveItem(from source: IndexSet, to destination: Int){
         self.checklist.mainList.file[selfIndex].checkListContainer.move(fromOffsets: source, toOffset: destination)
+        self.checklist.clearReset()
         self.checklist.mainList.save()
 }
 }

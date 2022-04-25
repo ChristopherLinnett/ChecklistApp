@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		904491E2281679C60059BE5D /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E1281679C60059BE5D /* Checklist.swift */; };
 		904491E428167C150059BE5D /* NewItemNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E328167C150059BE5D /* NewItemNamer.swift */; };
 		904491E6281680530059BE5D /* ConditionalDetailViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E5281680530059BE5D /* ConditionalDetailViewTitle.swift */; };
 		904491E8281681580059BE5D /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E7281681580059BE5D /* ResetButton.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		904491E1281679C60059BE5D /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		904491E328167C150059BE5D /* NewItemNamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemNamer.swift; sourceTree = "<group>"; };
 		904491E5281680530059BE5D /* ConditionalDetailViewTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalDetailViewTitle.swift; sourceTree = "<group>"; };
 		904491E7281681580059BE5D /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				90F19B92281250A600E02D4C /* NewChecklistButton.swift */,
-				904491E1281679C60059BE5D /* Checklist.swift */,
 				904491E328167C150059BE5D /* NewItemNamer.swift */,
 				904491E5281680530059BE5D /* ConditionalDetailViewTitle.swift */,
 				904491E7281681580059BE5D /* ResetButton.swift */,
@@ -322,7 +319,6 @@
 				90F19B8B2812358700E02D4C /* ViewModel.swift in Sources */,
 				904491E428167C150059BE5D /* NewItemNamer.swift in Sources */,
 				90F19B8F2812385F00E02D4C /* CheckboxItem.swift in Sources */,
-				904491E2281679C60059BE5D /* Checklist.swift in Sources */,
 				90F19B89281233A400E02D4C /* MasterListModel.swift in Sources */,
 				904491E6281680530059BE5D /* ConditionalDetailViewTitle.swift in Sources */,
 				90F19B93281250A600E02D4C /* NewChecklistButton.swift in Sources */,
