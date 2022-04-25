@@ -13,21 +13,31 @@ struct HomeView: View {
     @Environment(\.editMode) var editMode
     var body: some View {
         NavigationView {
-            List{
-                ForEach (self.viewModel.mainList.file.indices, id: \.self) {index in
-                    NavigationLink(destination: ListDetailView(checklist: self.viewModel, selfIndex: index)) {Text(self.viewModel.mainList.file[index].checkListName)}
-                }.onDelete(perform:viewModel.deleteChecklist)
-                    .onMove(perform: viewModel.doMove)
-            }
-            .navigationTitle("Checklists")
-            .toolbar {
-                ToolbarItemGroup(placement:.navigationBarLeading){
-                    EditButton()
-                }
-                ToolbarItemGroup(placement:.navigationBarTrailing) {
-                    newChecklistButton(viewModel: viewModel)
+            if self.viewModel.isLoading {
+                VStack {
+                    Spacer()
+                    Text("Loading").font(.largeTitle)
+                    Spacer()
                 }
             }
+            else {
+                List{
+                    ForEach (self.viewModel.mainList.file.indices, id: \.self) {index in
+                        NavigationLink(destination: ListDetailView(checklist: self.viewModel, selfIndex: index)) {Text(self.viewModel.mainList.file[index].checkListName)}
+                    }.onDelete(perform:viewModel.deleteChecklist)
+                        .onMove(perform: viewModel.doMove)
+                }
+                .navigationTitle("Checklists")
+                .toolbar {
+                    ToolbarItemGroup(placement:.navigationBarLeading){
+                        EditButton()
+                    }
+                    ToolbarItemGroup(placement:.navigationBarTrailing) {
+                        newChecklistButton(viewModel: viewModel)
+                    }
+                }
+                    
+                }
         }
     }
 }

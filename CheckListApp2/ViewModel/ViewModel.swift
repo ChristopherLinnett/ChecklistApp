@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     
     @Published var mainList:totalFile
     @Published var resetStorage: [CheckBoxListItem] = []
+    @Published var isLoading:Bool = true
 
     init() {
         self.mainList = totalFile(file: [])
@@ -22,6 +23,7 @@ class ViewModel: ObservableObject {
         for i in 0..<workingFile.count {
             self.mainList.file.append(workingFile[i])
         }
+        self.isLoading = false
     }
     func OnAddNewList() {
         self.mainList.addNewList()
