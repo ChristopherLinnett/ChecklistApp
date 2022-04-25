@@ -32,20 +32,8 @@ struct ListDetailView: View {
             }.onDelete(perform: deleteItem)
         }
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                if self.editMode?.wrappedValue == .active {
-                    HStack{
-                        Image(systemName: "square.and.pencil").foregroundColor(.yellow)
-                        TextField(checklist.mainList.file[selfIndex].checkListName, text: $title).onSubmit({
-                            self.checklist.updateName(newName: title, index:selfIndex)
-                            title=""
-                        })
-                        .background(
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(Color.clear))
-                    }
-                }
-                else {Text(checklist.mainList.file[selfIndex].checkListName)}
+            ToolbarItem(placement: .principal){
+                ConditionalDetailViewTitle(checklist: checklist, editMode: _editMode, title: $title, selfIndex: selfIndex)
             }
             ToolbarItemGroup(placement:.navigationBarTrailing){
                 if editMode?.wrappedValue == .active {
@@ -70,5 +58,6 @@ struct ListDetailView: View {
     }
     
 }
+
 
 

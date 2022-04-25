@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		904491E2281679C60059BE5D /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E1281679C60059BE5D /* Checklist.swift */; };
 		904491E428167C150059BE5D /* NewItemNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E328167C150059BE5D /* NewItemNamer.swift */; };
+		904491E6281680530059BE5D /* ConditionalDetailViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E5281680530059BE5D /* ConditionalDetailViewTitle.swift */; };
 		90F19B582812326200E02D4C /* CheckListApp2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F19B572812326200E02D4C /* CheckListApp2App.swift */; };
 		90F19B5A2812326200E02D4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F19B592812326200E02D4C /* HomeView.swift */; };
 		90F19B5C2812326400E02D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F19B5B2812326400E02D4C /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		904491E1281679C60059BE5D /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		904491E328167C150059BE5D /* NewItemNamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemNamer.swift; sourceTree = "<group>"; };
+		904491E5281680530059BE5D /* ConditionalDetailViewTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalDetailViewTitle.swift; sourceTree = "<group>"; };
 		90F19B542812326200E02D4C /* CheckListApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckListApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F19B572812326200E02D4C /* CheckListApp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListApp2App.swift; sourceTree = "<group>"; };
 		90F19B592812326200E02D4C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				90F19B92281250A600E02D4C /* NewChecklistButton.swift */,
 				904491E1281679C60059BE5D /* Checklist.swift */,
 				904491E328167C150059BE5D /* NewItemNamer.swift */,
+				904491E5281680530059BE5D /* ConditionalDetailViewTitle.swift */,
 			);
 			path = ViewObjects;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				90F19B8F2812385F00E02D4C /* CheckboxItem.swift in Sources */,
 				904491E2281679C60059BE5D /* Checklist.swift in Sources */,
 				90F19B89281233A400E02D4C /* MasterListModel.swift in Sources */,
+				904491E6281680530059BE5D /* ConditionalDetailViewTitle.swift in Sources */,
 				90F19B93281250A600E02D4C /* NewChecklistButton.swift in Sources */,
 				90F19B8D2812376F00E02D4C /* TotalFileModel.swift in Sources */,
 				90F19B5A2812326200E02D4C /* HomeView.swift in Sources */,
