@@ -18,7 +18,6 @@ struct HomeView: View {
                     Checklist(viewModel: viewModel, index: index)
             }.onDelete(perform:viewModel.deleteChecklist)
             }
-            .padding(.leading)
             .navigationTitle("Checklists")
                 .toolbar {
                     ToolbarItemGroup(placement:.navigationBarLeading){

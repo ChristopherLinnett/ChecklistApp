@@ -20,13 +20,7 @@ struct ListDetailView: View {
     var body: some View {
         List{
             if editMode?.wrappedValue == .active {
-                HStack {
-                    Text("⊕").font(.largeTitle).foregroundColor(.green)
-                    TextField("New Item Name", text: $newItem).onSubmit {
-                        checklist.addListItem(itemName: newItem,index: selfIndex)
-                        newItem=""
-                    }
-                }
+                newItemNamer(newItem: $newItem, checklist: checklist, selfIndex: selfIndex)
             }
             ForEach (self.checklist.mainList.file[selfIndex].checkListContainer.indices, id:\.self) {index in
                 HStack{
@@ -76,4 +70,5 @@ struct ListDetailView: View {
     }
     
 }
+
 
