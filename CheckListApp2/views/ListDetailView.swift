@@ -16,16 +16,16 @@ struct ListDetailView: View {
     init(checklist: ViewModel, selfIndex:Int) {
         self.checklist = checklist
         self.selfIndex = selfIndex
-
-        
     }
-    
     var body: some View {
         List{
             if editMode?.wrappedValue == .active {
-                TextField("New Item Name", text: $newItem).onSubmit {
-                    checklist.addListItem(itemName: newItem,index: selfIndex)
-                    newItem=""
+                HStack {
+                    Text("⊕").font(.largeTitle).foregroundColor(.green)
+                    TextField("New Item Name", text: $newItem).onSubmit {
+                        checklist.addListItem(itemName: newItem,index: selfIndex)
+                        newItem=""
+                    }
                 }
             }
             ForEach (self.checklist.mainList.file[selfIndex].checkListContainer.indices, id:\.self) {index in
@@ -37,38 +37,38 @@ struct ListDetailView: View {
                 }
             }.onDelete(perform: deleteItem)
         }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    if self.editMode?.wrappedValue == .active {
-                        HStack{
-                            Image(systemName: "square.and.pencil").foregroundColor(.yellow)
-                            TextField(checklist.mainList.file[selfIndex].checkListName, text: $title).onSubmit({
-                                self.checklist.updateName(newName: title, index:selfIndex)
-                                title=""
-                            })
-                            .background(
-                                RoundedRectangle(cornerRadius: 5)
-                                    .fill(Color.clear))
-                        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                if self.editMode?.wrappedValue == .active {
+                    HStack{
+                        Image(systemName: "square.and.pencil").foregroundColor(.yellow)
+                        TextField(checklist.mainList.file[selfIndex].checkListName, text: $title).onSubmit({
+                            self.checklist.updateName(newName: title, index:selfIndex)
+                            title=""
+                        })
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.clear))
                     }
-                    else {Text(checklist.mainList.file[selfIndex].checkListName)}
                 }
-                ToolbarItemGroup(placement:.navigationBarTrailing){
-                    if editMode?.wrappedValue == .active {
-                        Button(checklist.resetStorage.count<1 ? "Reset" : "Undo") {
-                            checklist.resetStorage.count<1 ? checklist.resetChecks(index: selfIndex) : checklist.undoReset(index: selfIndex)
-                        }
+                else {Text(checklist.mainList.file[selfIndex].checkListName)}
+            }
+            ToolbarItemGroup(placement:.navigationBarTrailing){
+                if editMode?.wrappedValue == .active {
+                    Button(checklist.resetStorage.count<1 ? "Reset" : "Undo") {
+                        checklist.resetStorage.count<1 ? checklist.resetChecks(index: selfIndex) : checklist.undoReset(index: selfIndex)
                     }
-                    EditButton()
                 }
-            }.onChange(of: editMode!.wrappedValue, perform: { value in
-                if value.isEditing {
-                    checklist.clearReset()
-                }
-                else {
-                    self.checklist.updateName(newName: title, index:selfIndex)
-                }
-            })
+                EditButton()
+            }
+        }.onChange(of: editMode!.wrappedValue, perform: { value in
+            if value.isEditing {
+                checklist.clearReset()
+            }
+            else {
+                self.checklist.updateName(newName: title, index:selfIndex)
+            }
+        })
     }
     
     func deleteItem(at offsets: IndexSet) {
