@@ -22,13 +22,10 @@ struct ListDetailView: View {
         
         List{
             if editMode?.wrappedValue == .active {
-                HStack {
                 TextField("New Item Name", text: $newItem).onSubmit {
                     checklist.addListItem(itemName: newItem,index: selfIndex)
                     newItem=""
                 }
-                    Image(systemName: "plus.circle").foregroundColor(.green)
-            }
             }
             ForEach (self.checklist.mainList.file[selfIndex].checkListContainer.indices, id:\.self) {index in
                 HStack{
@@ -44,19 +41,26 @@ struct ListDetailView: View {
             ToolbarItem(placement: .principal) {
                 if self.editMode?.wrappedValue == .active {
                     HStack{
-                    TextField(checklist.mainList.file[selfIndex].checkListName, text: $title).onSubmit({
-                        self.checklist.updateName(newName: title, index:selfIndex)
-                        title=""
-                    })
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .font(.title)
                         Image(systemName: "square.and.pencil").foregroundColor(.yellow)
+                        TextField(checklist.mainList.file[selfIndex].checkListName, text: $title).onSubmit({
+                            self.checklist.updateName(newName: title, index:selfIndex)
+                            title=""
+                        })
+                        .background(
+                                RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.clear))
                     }
                 }
-                else {Text(checklist.mainList.file[selfIndex].checkListName).font(.title)}
+                else {Text(checklist.mainList.file[selfIndex].checkListName)}
             }
-            ToolbarItemGroup(placement:.navigationBarLeading){
+            ToolbarItemGroup(placement:.navigationBarTrailing){
+                if editMode?.wrappedValue == .active {
+                    Button("Reset") {
+                        
+                    }
+                }
                 EditButton()
+                
             }
         }
     }
