@@ -15,7 +15,7 @@ struct HomeView: View {
         NavigationView {
             List{
                 ForEach (self.viewModel.mainList.file.indices, id: \.self) {index in
-                    NavigationLink(destination: ListDetailView(checklist: self.viewModel, selfIndex: index)) {Text(self.viewModel.mainList.file[index].checkListName)}
+                    Checklist(viewModel: viewModel, index: index)
             }.onDelete(perform:viewModel.deleteChecklist)
             }
             .padding(.leading)

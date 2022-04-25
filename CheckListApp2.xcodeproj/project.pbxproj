@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904491E2281679C60059BE5D /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904491E1281679C60059BE5D /* Checklist.swift */; };
 		90F19B582812326200E02D4C /* CheckListApp2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F19B572812326200E02D4C /* CheckListApp2App.swift */; };
 		90F19B5A2812326200E02D4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F19B592812326200E02D4C /* HomeView.swift */; };
 		90F19B5C2812326400E02D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F19B5B2812326400E02D4C /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		904491E1281679C60059BE5D /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		90F19B542812326200E02D4C /* CheckListApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckListApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F19B572812326200E02D4C /* CheckListApp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListApp2App.swift; sourceTree = "<group>"; };
 		90F19B592812326200E02D4C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904491E02816799F0059BE5D /* ViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				904491E1281679C60059BE5D /* Checklist.swift */,
+			);
+			path = ViewObjects;
+			sourceTree = "<group>";
+		};
 		90F19B4B2812326200E02D4C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 		90F19B562812326200E02D4C /* CheckListApp2 */ = {
 			isa = PBXGroup;
 			children = (
+				904491E02816799F0059BE5D /* ViewObjects */,
 				90F19B83281232A500E02D4C /* views */,
 				90F19B822812328900E02D4C /* Models */,
 				90F19B812812328100E02D4C /* ViewModel */,
@@ -301,6 +312,7 @@
 			files = (
 				90F19B8B2812358700E02D4C /* ViewModel.swift in Sources */,
 				90F19B8F2812385F00E02D4C /* CheckboxItem.swift in Sources */,
+				904491E2281679C60059BE5D /* Checklist.swift in Sources */,
 				90F19B89281233A400E02D4C /* MasterListModel.swift in Sources */,
 				90F19B93281250A600E02D4C /* NewChecklistButton.swift in Sources */,
 				90F19B8D2812376F00E02D4C /* TotalFileModel.swift in Sources */,
