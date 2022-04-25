@@ -11,7 +11,7 @@ class ViewModel: ObservableObject {
     
     @Published var mainList:totalFile
     @Published var resetStorage: [CheckBoxListItem] = []
-    
+
     init() {
         self.mainList = totalFile(file: [])
         self.mainList.load()

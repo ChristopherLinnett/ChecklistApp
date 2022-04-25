@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-
 struct newChecklistButton: View {
-    
     var viewModel: ViewModel
-    
     var body: some View {
         Button("+") {       // adds new checklist and places list within edit mode
             viewModel.OnAddNewList()
