@@ -17,7 +17,6 @@ struct ListDetailView: View {
         self.checklist = checklist
         self.selfIndex = selfIndex
     }
-    
     var body: some View {
         
         List{
@@ -55,17 +54,26 @@ struct ListDetailView: View {
             }
             ToolbarItemGroup(placement:.navigationBarTrailing){
                 if editMode?.wrappedValue == .active {
-                    Button("Reset") {
-                        
+                    Button(checklist.resetStorage.count<1 ? "Reset" : "Undo") {
+                        checklist.resetStorage.count<1 ? checklist.resetChecks(index: selfIndex) : checklist.undoReset(index: selfIndex)
                     }
                 }
                 EditButton()
-                
             }
-        }
+        }.onChange(of: editMode!.wrappedValue, perform: { value in
+            if value.isEditing {
+                checklist.clearReset()
+            }
+            else {
+                self.checklist.updateName(newName: title, index:selfIndex)
+            }
+          })
     }
+    
+    
     func deleteItem(at offsets: IndexSet) {
         self.checklist.mainList.file[selfIndex].deleteListItem(atOffsets: offsets)
     }
+    
 }
 
