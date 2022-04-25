@@ -20,7 +20,7 @@ struct totalFile: Codable {
     func load() -> [MasterListObject] {
             guard let data = try? Data(contentsOf: fileURL),
                   let file = try? JSONDecoder().decode([MasterListObject].self, from: data) else {return []}
-        print(String(data: data, encoding: .utf8)!)
+//        print(String(data: data, encoding: .utf8)!)
             return file
         }
     
@@ -29,8 +29,8 @@ struct totalFile: Codable {
             let data = try JSONEncoder().encode(self.file)
             
             try data.write(to: fileURL, options: .atomic)
-            guard let dataString = String(data: data, encoding: .utf8) else {return}
-            print(dataString)
+//            guard let dataString = String(data: data, encoding: .utf8) else {return}
+//            print(dataString)
         } catch {
             print("Could not write file \(error)")
         }
