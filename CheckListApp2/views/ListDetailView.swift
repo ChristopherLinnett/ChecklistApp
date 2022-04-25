@@ -37,9 +37,7 @@ struct ListDetailView: View {
             }
             ToolbarItemGroup(placement:.navigationBarTrailing){
                 if editMode?.wrappedValue == .active {
-                    Button(checklist.resetStorage.count<1 ? "Reset" : "Undo") {
-                        checklist.resetStorage.count<1 ? checklist.resetChecks(index: selfIndex) : checklist.undoReset(index: selfIndex)
-                    }
+                    ResetButton(checklist: checklist, selfIndex: selfIndex)
                 }
                 EditButton()
             }
@@ -58,6 +56,8 @@ struct ListDetailView: View {
     }
     
 }
+
+
 
 
 
