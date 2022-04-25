@@ -24,6 +24,11 @@ class CheckListApp2Tests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        var myTestFile = totalFile(file:[])
+        myTestFile.addNewList()
+        XCTAssertEqual(myTestFile.file[0].checkListName,"Checklist") //checks structure can handle new list being added
+        myTestFile.addObject(newItemName: "testItem", index: 0)
+        XCTAssertEqual(myTestFile.file[0].checkListContainer[0].itemName,"testItem") //check individual checkbox items can be added
     }
 
     func testPerformanceExample() throws {
