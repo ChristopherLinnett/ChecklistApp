@@ -15,8 +15,9 @@ struct HomeView: View {
         NavigationView {
             List{
                 ForEach (self.viewModel.mainList.file.indices, id: \.self) {index in
-                    Checklist(viewModel: viewModel, index: index)
+                    NavigationLink(destination: ListDetailView(checklist: self.viewModel, selfIndex: index)) {Text(self.viewModel.mainList.file[index].checkListName)}
                 }.onDelete(perform:viewModel.deleteChecklist)
+                    .onMove(perform: viewModel.doMove)
             }
             .navigationTitle("Checklists")
             .toolbar {

@@ -30,7 +30,10 @@ class ViewModel: ObservableObject {
     func deleteChecklist(at offsets: IndexSet) {
         self.mainList.deleteChecklist(atOffsets: offsets)
         self.mainList.save()
-
+    }
+    func doMove(from source: IndexSet, to destination: Int){
+        self.mainList.file.move(fromOffsets: source, toOffset: destination)
+        self.mainList.save()
     }
     func updateName(newName: String, index:Int) {
         self.mainList.rename(newName: newName,index: index)
