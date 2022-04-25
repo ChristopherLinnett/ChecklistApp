@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct CheckBoxListItem : Identifiable {
+struct CheckBoxListItem : Identifiable, Codable {
     var id = UUID()
     var itemName : String
     var itemChecked : Bool = false
+    
     
     mutating func toggleChecked() {              //allows individual checkbox to be checked/unchecked when clicked
         self.itemChecked.toggle()

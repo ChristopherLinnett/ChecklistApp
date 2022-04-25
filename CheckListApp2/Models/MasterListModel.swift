@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct MasterListObject: Identifiable {
+struct MasterListObject: Identifiable, Codable{
     var id = UUID()
     var checkListName:String
     var checkListContainer: [CheckBoxListItem]
+
     
     mutating func deleteListItem(atOffsets: IndexSet){
         self.checkListContainer.remove(atOffsets: atOffsets)

@@ -7,16 +7,35 @@
 
 import Foundation
 
-struct totalFile {
-    var file: [MasterListObject]
+struct totalFile: Codable {
+    var file: [MasterListObject] 
+        var fileURL: URL {
+            let fileName = "checklists.json"
+            let fm = FileManager.default
+            guard let documentsDir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {return URL(fileURLWithPath: "/")}
+            let fileURL = documentsDir.appendingPathComponent(fileName)
+            return fileURL
+        }
     
-    mutating func save(){
-        
+    func load() -> [MasterListObject] {
+            guard let data = try? Data(contentsOf: fileURL),
+                  let file = try? JSONDecoder().decode([MasterListObject].self, from: data) else {return []}
+        print(String(data: data, encoding: .utf8)!)
+            return file
+        }
+    
+    func save(){
+        do {
+            let data = try JSONEncoder().encode(self.file)
+            
+            try data.write(to: fileURL, options: .atomic)
+            guard let dataString = String(data: data, encoding: .utf8) else {return}
+            print(dataString)
+        } catch {
+            print("Could not write file \(error)")
+        }
     }
     
-    mutating func load(){
-        
-    }
     mutating func addNewList(){
         self.file.insert(MasterListObject(checkListName: "Checklist", checkListContainer: []), at: 0)
     }

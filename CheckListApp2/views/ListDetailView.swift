@@ -27,7 +27,9 @@ struct ListDetailView: View {
                     Text(self.checklist.mainList.file[selfIndex].checkListContainer[index].itemName)
                     Spacer()
                     Button(self.checklist.mainList.file[selfIndex].checkListContainer[index].itemChecked ? "✓" : "")
-                    {self.checklist.mainList.file[selfIndex].checkListContainer[index].toggleChecked()}
+                    {self.checklist.mainList.file[selfIndex].checkListContainer[index].toggleChecked()
+                        checklist.mainList.save()
+                    }
                 }
             }.onDelete(perform: deleteItem)
         }
@@ -50,11 +52,10 @@ struct ListDetailView: View {
             }
         })
     }
-    
     func deleteItem(at offsets: IndexSet) {
         self.checklist.mainList.file[selfIndex].deleteListItem(atOffsets: offsets)
+        self.checklist.mainList.save()
     }
-    
 }
 
 

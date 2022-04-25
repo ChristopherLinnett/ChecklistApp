@@ -14,19 +14,33 @@ class ViewModel: ObservableObject {
 
     init() {
         self.mainList = totalFile(file: [])
-        self.mainList.load()
+        self.populate()
+    }
+    
+    func populate() {
+        let workingFile = mainList.load()
+        for i in 0..<workingFile.count {
+            self.mainList.file.append(workingFile[i])
+        }
     }
     func OnAddNewList() {
         self.mainList.addNewList()
+        self.mainList.save()
     }
     func deleteChecklist(at offsets: IndexSet) {
         self.mainList.deleteChecklist(atOffsets: offsets)
+        self.mainList.save()
+
     }
     func updateName(newName: String, index:Int) {
         self.mainList.rename(newName: newName,index: index)
+        self.mainList.save()
+
     }
     func addListItem(itemName: String, index: Int) {
         self.mainList.addObject(newItemName: itemName, index: index)
+        self.mainList.save()
+
     }
     func resetChecks(index: Int){
         if mainList.file[index].checkListContainer.count > 0 {
@@ -35,6 +49,8 @@ class ViewModel: ObservableObject {
                 self.mainList.file[index].checkListContainer[i].setFalse()
             }
         }
+        self.mainList.save()
+
     }
     func undoReset(index: Int){
         if mainList.file[index].checkListContainer.count > 0 {
@@ -43,9 +59,13 @@ class ViewModel: ObservableObject {
             }
         }
         self.resetStorage = []
+        self.mainList.save()
+
     }
     func clearReset() {
         resetStorage = []
+        self.mainList.save()
+
     }
 }
 

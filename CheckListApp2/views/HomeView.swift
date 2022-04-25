@@ -16,19 +16,18 @@ struct HomeView: View {
             List{
                 ForEach (self.viewModel.mainList.file.indices, id: \.self) {index in
                     Checklist(viewModel: viewModel, index: index)
-            }.onDelete(perform:viewModel.deleteChecklist)
+                }.onDelete(perform:viewModel.deleteChecklist)
             }
             .navigationTitle("Checklists")
-                .toolbar {
-                    ToolbarItemGroup(placement:.navigationBarLeading){
-                        EditButton()
-                    }
-                    ToolbarItemGroup(placement:.navigationBarTrailing) {
-                        newChecklistButton(viewModel: viewModel)
-                    }
+            .toolbar {
+                ToolbarItemGroup(placement:.navigationBarLeading){
+                    EditButton()
                 }
+                ToolbarItemGroup(placement:.navigationBarTrailing) {
+                    newChecklistButton(viewModel: viewModel)
+                }
+            }
         }
-        
     }
 }
 
