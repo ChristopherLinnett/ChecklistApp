@@ -45,7 +45,6 @@ class ViewModel: ObservableObject {
     func addListItem(itemName: String, index: Int) {
         self.mainList.addObject(newItemName: itemName, index: index)
         self.mainList.save()
-
     }
     func resetChecks(index: Int){
         if mainList.file[index].checkListContainer.count > 0 {
