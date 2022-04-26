@@ -33,7 +33,6 @@ struct ListDetailView: View {
                 }
             }.onDelete(perform: deleteItem)
                 .onMove(perform: moveItem)
-
         }
         .toolbar {
             ToolbarItem(placement: .principal){
@@ -62,7 +61,7 @@ struct ListDetailView: View {
         self.checklist.mainList.file[selfIndex].checkListContainer.move(fromOffsets: source, toOffset: destination)
         self.checklist.clearReset()
         self.checklist.mainList.save()
-}
+    }
 }
 
 

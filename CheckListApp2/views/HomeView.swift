@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-
+//
+//
+//
 struct HomeView: View {
     @ObservedObject var viewModel:ViewModel = ViewModel()
     @State var newListTitle:String = ""
@@ -14,11 +16,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             if self.viewModel.isLoading {
-                VStack {
-                    Spacer()
-                    Text("Loading").font(.largeTitle)
-                    Spacer()
-                }
+                Text("Loading...").font(.largeTitle)
             }
             else {
                 List{
@@ -36,8 +34,8 @@ struct HomeView: View {
                         newChecklistButton(viewModel: viewModel)
                     }
                 }
-                    
-                }
+                
+            }
         }
     }
 }

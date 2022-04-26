@@ -12,13 +12,11 @@ struct CheckBoxListItem : Identifiable, Codable {
     var itemName : String
     var itemChecked : Bool = false
     
-    
     mutating func toggleChecked() {              //allows individual checkbox to be checked/unchecked when clicked
         self.itemChecked.toggle()
     }
     mutating func setFalse() {                   //allows resetting of checkmarks for reset function
         self.itemChecked = false
     }
-
 }
 
