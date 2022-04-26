@@ -16,7 +16,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             if self.viewModel.isLoading {
-                Text("Loading...").font(.largeTitle)
+                ProgressView()
             }
             else {
                 List{
