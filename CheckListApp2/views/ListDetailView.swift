@@ -35,7 +35,6 @@ struct ListDetailView: View {
                     Spacer()
                     Button(self.checklist.mainList.file[selfIndex].checkListContainer[index].itemChecked ? "✓" : "")
                     {self.checklist.mainList.file[selfIndex].checkListContainer[index].toggleChecked()
-                        checklist.mainList.save()
                     }
                 }
             }.onDelete(perform: deleteItem)
