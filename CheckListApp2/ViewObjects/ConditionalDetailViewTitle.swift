@@ -6,7 +6,13 @@
 //
 
 import SwiftUI
-
+///This view will show a text view of the checklist name is editmode is off, and will give a textfield if it is true. This textfield will allow changes to the name of the checklist on commit or deactivation of editmode
+///- Parameter checklist: the viewmodel being passed into the view
+///- Parameter editmode: a binding to the upper level editMode
+///- Parameter title: a binding to the higher level string that will make changes to the checklists title
+///- Parameter selfIndex: the index of the checklist this view exists within
+///
+///
 struct ConditionalDetailViewTitle: View {
     @ObservedObject var checklist: ViewModel
     @Environment(\.editMode) var editMode

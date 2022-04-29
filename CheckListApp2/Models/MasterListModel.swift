@@ -6,7 +6,11 @@
 //
 
 import Foundation
-
+///
+///This Object refers to a checklist, it contains a unique ID, a name (checkListName) and an array of items within the list (checkListContainer)
+///- Parameter checkListName: A string that contains the title of the checklist
+///- Parameter checListContainer: An array container checkBoxListItems, which are the items within the checklists
+///
 struct MasterListObject: Identifiable, Codable{
     var id = UUID()
     var checkListName:String

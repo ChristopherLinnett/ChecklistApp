@@ -6,7 +6,12 @@
 //
 
 import Foundation
-
+///
+///This refers to the main object model, the property 'file' will contain the data that will be coded to JSON format for saving/loading
+///- Parameter file : a list of checklists
+///- Parameter isLoading: a boolean check to see whether loading is complete
+///- Parameter fileURL: a URL that holds the location that data will be saved/loaded from
+///
 struct totalFile: Codable {
     var file: [MasterListObject] {
         didSet {

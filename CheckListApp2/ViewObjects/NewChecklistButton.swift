@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+///A button displaying a plus sign that when clicked will add a new empty checklist to the main array of checklists
+///- Parameter viewModel: the viewmodel being passed to this button
 struct newChecklistButton: View {
     var viewModel: ViewModel
     var body: some View {

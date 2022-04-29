@@ -6,6 +6,13 @@
 //
 
 import SwiftUI
+
+///A list detaiil view. This view shows the individual list items that exist within a list
+///- Parameters checklist: the viewmodel that is passed from the above level
+///- Parameters selfIndex: the index of this list within the array of checklists
+///- Parameters newItem: a placeholder string is bound to an input and will assign the name to any newly created items
+///- Parameters title: a placeholder string bound to an input (only visible in edit mode) that will reassign the name of this list
+///
 struct ListDetailView: View {
     @ObservedObject var checklist: ViewModel
     var selfIndex:Int

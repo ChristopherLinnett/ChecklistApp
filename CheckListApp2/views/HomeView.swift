@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-//
-//
-//
+///The main view displaying a list of checklists and the title
+///- Parameters viewModel: the newly created instance of the viewmodel
+///- Parameters editMode: Environment variable that is bound to the above EditMode, if true, allows for editing functions to be possible
+///
 struct HomeView: View {
     @ObservedObject var viewModel:ViewModel = ViewModel()
-    @State var newListTitle:String = ""
     @Environment(\.editMode) var editMode
     var body: some View {
         NavigationView {

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+///A reset button thats action and title will be reversed based on a ternary operation
+///- Parameters checklist: the viewmodel being passed into the button
+///- Parameters selfIndex: the index of the list this button exists within
+///
+
 struct ResetButton: View {
     @ObservedObject var checklist:ViewModel
     var selfIndex: Int
