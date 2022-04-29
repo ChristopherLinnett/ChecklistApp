@@ -8,7 +8,12 @@
 import Foundation
 
 struct totalFile: Codable {
-    var file: [MasterListObject]
+    var file: [MasterListObject] {
+        didSet {
+            if !self.isLoading {self.save()}}
+    }
+    
+    var isLoading = true
     var fileURL: URL {
         let fileName = "checklists.json"
         let fm = FileManager.default
